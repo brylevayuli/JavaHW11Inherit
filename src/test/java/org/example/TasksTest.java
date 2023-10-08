@@ -29,7 +29,7 @@ public class TasksTest {
 
     @Test
     public void matchesEpic() {
-        Epic Epic = new Epic("321", new String[]{"выгулять собаку", "позвонить родителям"});
+        Epic Epic = new Epic(321, new String[]{"выгулять собаку", "позвонить родителям"});
 
         boolean actual = Epic.matches("позвонить");
         boolean expected = true;
@@ -39,7 +39,7 @@ public class TasksTest {
 
     @Test
     public void matchesEpicFalse() {
-        Epic Epic = new Epic("321", new String[]{"выгулять собаку", "позвонить родителям"});
+        Epic Epic = new Epic(321, new String[]{"выгулять собаку", "позвонить родителям"});
 
         boolean actual = Epic.matches("работа");
         boolean expected = false;
@@ -49,7 +49,7 @@ public class TasksTest {
 
     @Test
     public void matchesMeeting() {
-        Meeting Meeting = new Meeting(123, new String[]{"стройка", "заливка фундамента"});
+        Meeting Meeting = new Meeting(123, "стройка", "заливка фундамента", "Вторник");
 
         boolean actual = Meeting.matches("стройка");
         boolean expected = true;
@@ -59,7 +59,7 @@ public class TasksTest {
 
     @Test
     public void matchesMeetingFalse() {
-        Meeting Meeting = new Meeting(123, new String[]{"стройка", "заливка фундамента"});
+        Meeting Meeting = new Meeting(123, "стройка", "заливка фундамента", "Вторник");
 
         boolean actual = Meeting.matches("ипотека");
         boolean expected = false;

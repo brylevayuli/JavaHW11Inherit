@@ -3,15 +3,15 @@ package org.example;
 import java.util.Arrays;
 
 public class Epic extends Task {
-    protected String subtasks;
+    protected String[] subtasks;
 
     public Epic(int id, String[] subtasks) {
         super(id); // вызов родительского конструктора
-        this.subtasks = Arrays.toString(subtasks); // заполнение своих полей
+        this.subtasks = subtasks; // заполнение своих полей
     }
 
     public String[] getSubtasks() {
-        return new String[]{subtasks};
+        return subtasks;
     }
 
     @Override
